@@ -20,27 +20,32 @@ let btnDiv = document.querySelector('.content-pick');
         btnDiv.style.backgroundColor = 'lightyellow';
     })
 
-let pyd = document.querySelector('.content-destination')
+let pyd = document.querySelector('.content-destination');
     //5
     pyd.addEventListener('mouseover', (event) => {
-        pyd.style.border = '5px dashed lightblue';
+        pyd.style.border = '5px dashed lightblue'; 
     })
 
+window.addEventListener('resize', cb) 
     //6
-    .addEventListener('resize', (event) => {
-        
-    })
+    function cb() {
+        alert('Window resized.');
+    }
 
-let btns = document.querySelector('.btn');    
+let btns = document.querySelectorAll('.btn');
+Array.from(btns)    
     //7
-     btns.addEventListener('mouseout', (event) => {
-        btns.style.backgroundColor = 'purple';
+    btns.forEach(btn => {
+        btn.addEventListener('mouseout', (event) => {
+        btn.style.backgroundColor = 'purple';
+        event.currentTarget.preventDefault();
+        })
     })
-    
     //8
     addEventListener('scroll', (event) => {
 
     })
+    
     
     //9
     addEventListener('select', (event) => {
@@ -51,3 +56,4 @@ let btns = document.querySelector('.btn');
     addEventListener('dblclick', (event) => {
 
     })
+
